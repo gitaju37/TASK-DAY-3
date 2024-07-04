@@ -1,0 +1,12 @@
+function reqListener() {
+    const countryarr = ( JSON.parse( this.responseText ) );
+    for ( let countryflag of countryarr ) {
+        console.log( countryflag.flags.png )
+
+    }
+}
+
+const req = new XMLHttpRequest();
+req.addEventListener( "load", reqListener );
+req.open( "GET", "https://restcountries.com/v3.1/all" );
+req.send();
